@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 1</title>
+    <!--
+    Write a function printTable to print the “5 times” multiplication table. 
+    The function does not take in any parameter and does not return any value.
+    -->
+    <script>
+
+        let num; 
+
+        function printTable(num){
+            for(let i=1, j=num; i <= 10; i++, j = i*5){
+            document.write(`5 times ${i} = ${j} <br>`);
+            }
+        }
+
+        printTable(5);
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

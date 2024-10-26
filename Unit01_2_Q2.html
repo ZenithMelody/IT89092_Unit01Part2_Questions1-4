@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 1</title>
+    <!--
+    Modify the function in question 1 to have one parameter, which indicate the number for the 
+    multiplication table. For example, if the value given is 7, then the function prints 
+    the "7 times" multiplication table.
+    -->
+    <script>
+
+        let x;
+
+        x = prompt("Pls gimme number");   
+
+        function printTable(){
+            for(let i=1, j=x; i <= 10; i++, j = i*x){
+            document.write(`${x} times ${i} = ${j} <br>`);
+            }
+        }
+
+        printTable(x);
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

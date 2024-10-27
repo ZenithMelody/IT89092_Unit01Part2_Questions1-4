@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question 4</title>
+    <!--
+    Modify question 3 such that the user will be prompt to enter the range to check rather 
+    than 4 to 50. The program should ensure only number can be entered and the second number 
+    enter for the range must be greater then the first number, not negative numbers allowed.
+    -->
+    <script>
+
+        function isPrime(num){
+            if(num < 2){
+                return false
+            }
+
+            for (let i = 2; i < num; i++){
+                if (num % i === 0){
+                    return false 
+                }
+            }
+            return true
+        }
+
+        function checkRange(){
+
+            let start;
+            let end;
+
+            while(true){
+
+                start = prompt("Pls gimme start number"); 
+                end = prompt("Pls gimme end number"); 
+
+                start = parseInt(start);
+                end = parseInt(end);
+
+                if(start < 0 || end < 0){
+                    alert("Pls enter positive numbers");
+                    continue;
+                }
+
+                if(end <= start){
+                    alert("Pls make the end bigger than start");
+                    continue;
+                }
+                break;
+            }
+            
+            return {start, end};
+        }
+
+        function printPrimes(start, end){
+
+            let sum = 0;
+
+            for(x = start; x < end; x++){
+                if(isPrime(x)){
+                    document.write(`${x}<br>`);
+                    sum += x;
+                }
+            }
+            document.write("The sum of all prime numbers is ", sum);
+        }
+
+        const {start, end} = checkRange(); 
+        printPrimes(start, end);
+
+    </script>
+</head>
+<body>
+
+    <!--
+    Aplogoies if this is cheating but I do not know why my output was:
+    The sum of all prime numbers is 01113171923293137414347 
+    thus I chatgpt'd the solution for this, and it turns out I had to add two lines:
+    start = parseInt(start);
+    end = parseInt(end);
+    to convert them into ints
+    -->
+
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Question 1</title>
+    <title>Question 3</title>
     <!--
     Write a program to display all the prime numbers from 4 to 50. Your solution should 
     include a function isPrime which return true if a given number is a prime number.  
@@ -11,16 +11,35 @@
     -->
     <script>
 
-        let start;
-        let end;
-
-        function isPrime(start, end){
-            for(let i=start; i = end; i++){
-            document.write(`${i}<br>`);
+        function isPrime(num){
+            if(num < 2){
+                return false
             }
+
+            for (let i = 2; i < num; i++){
+                if (num % i === 0){
+                    return false 
+                }
+            }
+
+            return true
         }
 
-        isPrime(4, 50);
+        function printPrimes(start, end){
+
+            let sum = 0;
+
+            for (x = start; x < end; x++){
+                if(isPrime(x)){
+                    document.write(`${x}<br>`);
+                    sum += x;
+                }
+            }
+
+            document.write("The sum of all prime numbers is ", sum);
+        }
+
+        printPrimes(4,50);
 
     </script>
 </head>
